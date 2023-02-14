@@ -21,8 +21,8 @@
       <ion-input type="text" formControlName="titulo"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button type="submit" (click)="enviarDatos()" expand="block" [disabled]="form.invalid || sending">Enviar</ion-button>
-  <ion-button type="submit" (click)="actualizarDatos()" expand="block" [disabled]="form.invalid || sending">Actualizar</ion-button>
+  <ion-button type="submit" color="success" (click)="enviarDatos()" expand="block" [disabled]="form.invalid || sending">Enviar</ion-button>
+  <ion-button type="submit" color="warning" (click)="actualizarDatos()" expand="block" [disabled]="form.invalid || sending">Actualizar</ion-button>
 </form>
 <ion-spinner *ngIf="sending"></ion-spinner>
 <p *ngIf="sent">¡Personaje añadido correctamente!</p>
