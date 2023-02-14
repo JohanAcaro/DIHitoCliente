@@ -10,23 +10,24 @@ import { FormBuilder } from '@angular/forms';
 })
 export class TablaComponent implements OnInit {
 
+    // Variables
     personajes: any;
-    personajeSeleccionado: any;
 
-    //form : FormGroup;
-
+    
+    // Constructor para inicializar DataService y FormBuilder
     constructor(
       private dataService: DataService,
       public formBuilder: FormBuilder
     ) {}
-
+    
+    // Método para obtener datos del servidor
     ngOnInit() {
       this.dataService.getData().subscribe(data => {
         this.personajes = data;
       });
     }
 
-  
+    // Método para eliminar datos del servidor
     eliminar(id: number) {
       this.dataService.deleteData(id).subscribe(() => {
         this.dataService.getData().subscribe(data => {

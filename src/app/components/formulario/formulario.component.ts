@@ -9,6 +9,7 @@ import { DataService } from '../../data-service.service';
 })
 export class FormularioComponent implements OnInit {
 
+  // Variables para el formulario
   form: FormGroup;
   sending = false;
   sent = false;
@@ -16,6 +17,7 @@ export class FormularioComponent implements OnInit {
   sent2 = false;
   sendError2 = false;
 
+  // Constructor para inicializar el formulario
   constructor(private formBuilder: FormBuilder, private dataService: DataService) {
     this.form = this.formBuilder.group({
       id: ['', Validators.required],
@@ -43,6 +45,7 @@ export class FormularioComponent implements OnInit {
     }
   }
 
+  // Método para actualizar datos como objeto al servidor
   actualizarDatos() {
     if (this.form.valid) {
       this.sending = true;
