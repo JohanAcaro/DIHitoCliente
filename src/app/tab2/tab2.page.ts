@@ -11,7 +11,7 @@ export class Tab2Page {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getData().subscribe(data => {
+    this.dataService.getRaiz().subscribe(data => {
       console.log(data);
     });
   }

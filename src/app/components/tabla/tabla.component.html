@@ -1,1 +1,64 @@
+<div style="overflow-x: auto; max-width: 100%">
+  <ion-grid style="min-width: 700px">
+    <ion-row>
+      <ion-col size="12" size-md="12" class="header-table">
+        <ion-row>
+          <ion-col size="1" size-md="1">ID</ion-col>
+          <ion-col size="3.5" size-md="3.5">Nombre</ion-col>
+          <ion-col size="1.5" size-md="1.5">Casa</ion-col>
+          <ion-col size="1" size-md="1">Edad</ion-col>
+          <ion-col size="3.5" size-md="3.5">Titulo</ion-col>
+          <ion-col size="1.5" size-md="1.5">Eliminar</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-md="12">
+        <ion-row *ngFor="let personaje of personajes">
+          <ion-col size="1" size-sm="1">{{ personaje.ID }}</ion-col>
+          <ion-col size="3.5" size-sm="3.5">{{ personaje.Nombre }}</ion-col>
+          <ion-col size="1.5" size-sm="1.5">{{ personaje.Casa }}</ion-col>
+          <ion-col size="1" size-sm="1">{{ personaje.Edad }}</ion-col>
+          <ion-col size="3.5" size-sm="3.5">{{ personaje.Titulo }}</ion-col>
+          <ion-col size="1.5" size-sm="1.5">
+            <ion-button (click)="eliminar(personaje.ID)">
+              <ion-icon name="trash"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
 
+<!-- <ion-modal #modalFormulario>
+  <ion-header>
+    <ion-title>Editar Usuario</ion-title>
+  </ion-header>
+  <ion-content>
+    <form [formGroup]="form" (ngSubmit)="guardarCambios()">
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input type="number" [(ngModel)]="personajeSeleccionado.ID"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input type="number" [(ngModel)]="personajeSeleccionado.Nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input type="number" [(ngModel)]="personajeSeleccionado.Casa"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input type="number" [(ngModel)]="personajeSeleccionado.Edad"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input type="number" [(ngModel)]="personajeSeleccionado.Titulo"></ion-input>
+      </ion-item>
+      <ion-button type="submit">Guardar Cambios</ion-button>
+    </form>
+  </ion-content>
+</ion-modal>
+ -->

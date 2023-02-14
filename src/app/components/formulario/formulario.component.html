@@ -1,3 +1,31 @@
-<p>
-  formulario works!
-</p>
+<form [formGroup]="form">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">ID</ion-label>
+      <ion-input type="number" formControlName="id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Casa</ion-label>
+      <ion-input type="text" formControlName="casa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Edad</ion-label>
+      <ion-input type="number" formControlName="edad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Titulo</ion-label>
+      <ion-input type="text" formControlName="titulo"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button type="submit" (click)="enviarDatos()" expand="block" [disabled]="form.invalid || sending">Enviar</ion-button>
+  <ion-button type="submit" (click)="actualizarDatos()" expand="block" [disabled]="form.invalid || sending">Actualizar</ion-button>
+</form>
+<ion-spinner *ngIf="sending"></ion-spinner>
+<p *ngIf="sent">¡Personaje añadido correctamente!</p>
+<p *ngIf="sent2">¡Personaje actualizado correctamente!</p>
+<p *ngIf="sendError">Ha ocurrido un error al insertar el personaje. Por favor, inténtalo de nuevo.</p>
+<p *ngIf="sendError2">Ha ocurrido un error al actualizar el personaje. Por favor, inténtalo de nuevo.</p>
